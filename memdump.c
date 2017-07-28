@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	size_t pid = 0;
 	char buffer[BUFF] = {0};
 	int buff;
-    char* tmp= NULL;
+        char* tmp= NULL;
 	char path[100] = "";
 	char* delim = NULL;
 	char* str =NULL;
@@ -48,12 +48,12 @@ int main(int argc, char const *argv[])
 		if(strstr(buffer,argv[2]) != NULL) {// && strstr(buffer,"r-xp") !=NULL)
 			printf("[+] %s [+]\n", buffer);
 			strcpy(tmp,buffer);
-    		str = strtok(tmp,"-");//第一次调用strtok
-    		if(str != NULL) {//当返回值不为NULL时，继续循环
-    			sscanf(str, "%x", &startaddr);
-				str = strtok(NULL," ");//继续调用strtok，分解剩下的字符串
-				if(str != NULL)
-					sscanf(str, "%x", &endaddr);
+    		        str = strtok(tmp,"-");//第一次调用strtok
+    		        if(str != NULL) {//当返回值不为NULL时，继续循环
+    			    sscanf(str, "%x", &startaddr);
+			    str = strtok(NULL," ");//继续调用strtok，分解剩下的字符串
+			    if(str != NULL)
+			        sscanf(str, "%x", &endaddr);
     		}
     		close(fd);
     		break;
